@@ -1,0 +1,139 @@
+ gcc -g p5final.c
+ ./a.out
+enter the number
+16
+enter the number
+14
+hcf of 16 and 14 id 2 
+ ./a.out
+enter the number
+12
+enter the number
+16
+hcf of 12 and 16 id 4 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+ 
+ gcc -g p5final.c
+ ./a.out
+enter the number
+3
+enter the number
+6
+hcf of 3 and 6 id 3 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x842: file p5final.c, line 26.
+(gdb) r
+Starting program: /home/runner/IA2-Test1-Session2-2/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5final.c:26
+26    a= input();
+(gdb) s
+input () at p5final.c:3
+3   {
+(gdb) n
+5     printf("enter the number\n");
+(gdb) n
+enter the number
+6     scanf("%d",&n);
+(gdb) n
+4
+7     return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:27
+27    b= input();
+(gdb) s
+input () at p5final.c:3
+3   {
+(gdb) n
+5     printf("enter the number\n");
+(gdb) n 
+enter the number
+6     scanf("%d",&n);
+(gdb) n
+6
+7     return n;
+(gdb) n
+8   }
+(gdb) n
+main () at p5final.c:28
+28    hcf= gcd(a,b);
+(gdb) s
+gcd (a=4, b=6) at p5final.c:11
+11    for(int i=1; i <= a && i <= b; ++i)
+(gdb) n
+14          if(a%i==0 && b%i==0)
+(gdb) n
+15              gcd = i;
+(gdb) n
+11    for(int i=1; i <= a && i <= b; ++i)
+(gdb) n
+14          if(a%i==0 && b%i==0)
+(gdb) n
+15              gcd = i;
+(gdb) n
+11    for(int i=1; i <= a && i <= b; ++i)
+(gdb) n
+14          if(a%i==0 && b%i==0)
+(gdb) n
+11    for(int i=1; i <= a && i <= b; ++i)
+(gdb) n
+14          if(a%i==0 && b%i==0)
+(gdb) n
+11    for(int i=1; i <= a && i <= b; ++i)
+(gdb) n
+17      return gcd;
+(gdb) n
+18  }
+(gdb) n
+main () at p5final.c:29
+29    out_put(a,b,hcf);
+(gdb) s
+out_put (a=4, b=6, gcd=2) at p5final.c:21
+21    printf("hcf of %d and %d id %d \n",a,b,gcd);
+(gdb) n
+hcf of 4 and 6 id 2 
+22  }
+(gdb) n
+main () at p5final.c:30
+30    return 0;
+(gdb) n
+32  }
+(gdb) n
+__libc_start_main (main=0x555b5340083a <main>, argc=1, argv=0x7ffece54adb8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffece54ada8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 78] will be killed.
+
+Quit anyway? (y or n) y
+ 
